@@ -1,0 +1,10 @@
+.inner-header {
+  color: #000000;
+  background: #f1f1f1;
+  &__title {
+    text-align: center;
+    font-size: 27px;
+    line-height: 30px;
+    font-weight: 700;
+  }
+}
