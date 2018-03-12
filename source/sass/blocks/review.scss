@@ -1,0 +1,40 @@
+.review {
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .review {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff url("../img/review@1x.jpg") 0 0 no-repeat;
+
+    &__list {
+      order: 2;
+      // display: flex;
+      // flex-wrap: wrap;
+    }
+
+    &__btn {
+      order: 1;
+      margin-left: auto;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .review {
+
+    &__title {
+      margin-left: 175px;
+    }
+
+    &__list {
+      margin-left: 175px;
+    }
+  }
+}

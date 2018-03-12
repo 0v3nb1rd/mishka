@@ -3,14 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка - каталог</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <nav class="top-menu">
-      <div class="container">
+      <div class="container top-menu__wrapper">
         <a class="logo" href="index.html">
-          <picture class="logo__options"></picture>
+          <picture class="logo__options">
+            <img src="img/logo-mobile.svg" width="85.589px" height="35.034px" alt="">
+          </picture>
         </a>
         <button class="top-menu__toggle" type="button">Открыть меню</button>
         <ul class="top-menu__list top-menu__list--closed">
@@ -28,16 +31,16 @@
           </li>
         </ul>
 
-        <ul class="user-blosk user-blosk--closed">
+        <ul class="user-block user-block--closed">
           <li class="user-block__item">
             <a class="user-block__link user-block__link--search" href="#">
-              <svg></svg>
+              <!-- <svg></svg> -->
               Поиск по сайту
             </a>
           </li>
           <li class="user-block__item">
             <a class="user-block__link user-block__link--basket" href="#">
-              <svg></svg>
+              <!-- <svg></svg> -->
               Корзина: <span>пока пуста</span>
             </a>
           </li>
@@ -53,10 +56,10 @@
     </header>
 
     <main class="catalog-main">
-      <div class="container">
+      <div class="container catalog-main__wrapper">
         <article class="product-post">
           <a class="product-post__img-link" href="#">
-            <picture></picture>
+            <picture><img src="img/photo-hare-mobile@1x.jpg" alt=""></picture>
           </a>
           <div class="product-post__info">
             <h2 class="product-post__title">
@@ -67,14 +70,14 @@
           <div class="product-post__buy">
             <a class="product-post__price" href="#">1 200 руб.</a>
             <a class="product-post__link-basket" href="#">
-              <svg></svg>
+              <!-- <svg></svg> -->
             </a>
           </div>
         </article>
 
         <article class="product-post">
           <a class="product-post__img-link" href="#">
-            <picture></picture>
+            <picture><img src="img/photo-bowl-mobile@1x.jpg" alt=""></picture>
           </a>
           <div class="product-post__info">
             <h2 class="product-post__title">
@@ -85,14 +88,14 @@
           <div class="product-post__buy">
             <a class="product-post__price" href="#">690 руб.</a>
             <a class="product-post__link-basket" href="#">
-              <svg></svg>
+              <!-- <svg></svg> -->
             </a>
           </div>
         </article>
 
         <article class="product-post">
           <a class="product-post__img-link" href="#">
-            <picture></picture>
+            <picture><img src="img/photo-toys-mobile@1x.jpg" alt=""></picture>
           </a>
           <div class="product-post__info">
             <h2 class="product-post__title">
@@ -103,19 +106,19 @@
           <div class="product-post__buy">
             <a class="product-post__price" href="#">1 500 руб.</a>
             <a class="product-post__link-basket" href="#">
-              <svg></svg>
+              <!-- <svg></svg> -->
             </a>
           </div>
         </article>
 
         <article class="video-post">
           <h2 class="video-post__title">
-            <svg></svg>
+            <!-- <svg></svg> -->
             <span>Процесс производства</span>
           </h2>
           <div class="video-post__player-wrapper">
             <div class="video-past__player-icon">
-              <picture></picture>
+              <picture><img src="img/video-mobile@1x.jpg" alt=""></picture>
             </div>
           </div>
           <div class="video-post__info">
@@ -127,9 +130,9 @@
     </main>
 
     <footer class="footer">
-      <div class="container">
+      <div class="container footer__wrapper">
         <a class="footer__logo-link" href="#">
-          <svg></svg>
+          <img src="img/logo-mobile.svg" alt="">
         </a>
 
         <ul class="footer__social social">
@@ -147,7 +150,7 @@
         <div class="footer__copyright copyright">
           <a class="copyright__link" href="#">
             <b class="copyright__text">Разработано:</b>
-            <svg></svg>
+            <!-- <svg></svg> -->
           </a>
         </div>
       </div>

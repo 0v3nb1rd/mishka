@@ -1,0 +1,9 @@
+.home-main {
+
+}
+
+@media (min-width: $tablet-width) {
+  .home-main {
+    display: flex;
+  }
+}

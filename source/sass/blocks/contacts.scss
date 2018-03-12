@@ -1,0 +1,29 @@
+.contacts {
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .contacts {
+
+    &__info {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+// @media (min-width: $desktop-width) {
+//   .about {
+
+//     &__title {
+//       margin: 0 175px;
+//     }
+
+//     &__list {
+//       margin: 0 175px;
+//     }
+//   }
+// }

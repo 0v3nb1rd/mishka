@@ -1,8 +1,28 @@
 .footer {
-  // border: 1px solid transparent;
   color: #000000;
   background: #f1f1f1;
+
   &__logo-link {
-    // display: none;
+    display: none;
+  }
+
+  &__social {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .footer {
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__logo-link {
+      display: block;
+    }
   }
 }

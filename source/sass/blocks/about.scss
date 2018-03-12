@@ -1,0 +1,31 @@
+.about {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .about {
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .about {
+
+    &__title {
+      margin: 0 175px;
+    }
+
+    &__list {
+      margin: 0 175px;
+    }
+  }
+}

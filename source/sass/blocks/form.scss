@@ -1,0 +1,60 @@
+.form {
+
+  &__radio-label {
+    display: block;
+  }
+
+  &__checkbox-label {
+    display: block;
+  }
+
+  &__input {
+    display: block;
+    background-color: transparent;
+    border: 0;
+  }
+
+  &__textarea-input {
+    border: 2px solid #444444;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .form {
+
+    &__type--radio {
+    display: flex;
+    }
+
+    &__wrapper {
+      display: flex;
+    }
+
+    &__type-checkbox {
+      background-color: $bg_footer;
+    }
+
+    &__phone {
+    background-color: $bg_footer;
+    }
+
+    &__email {
+      background-color: $bg_footer;
+    }
+
+    &__input-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+
+    &__text {
+      display: flex;
+      width: 100%;
+    }
+
+    &__textarea-input {
+      margin-left: auto;
+    }
+  }
+}

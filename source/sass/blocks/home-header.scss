@@ -1,5 +1,32 @@
 .home-header {
+  height: 490px;
   color: #000000;
-  background-color: #fbfbfb;
-  // background-image: url("");
+  background-color: $bg_lightgrey;
+  background-image: url("../img/hero-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
+
+  box-shadow: inset 0px 1px 0px 0px rgba(236,236,236,1);
+
+  &__title {
+    text-align: center;
+    margin: 0;
+  }
+
+  &__menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .home-header {
+    height: 745px;
+
+    &__menu {
+      display: flex;
+    }
+  }
 }
