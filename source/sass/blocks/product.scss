@@ -7,6 +7,7 @@
 }
 
 .product {
+
   &__title {
     margin: 0;
     margin-bottom: 5px;
@@ -28,6 +29,7 @@
   }
 
   &__description {
+    min-height: 72px;
     margin: 25px 0;
     color: #444444;
     font-size: 15px;
@@ -37,6 +39,10 @@
 
   &__options {
     display: block;
+    color: #444444;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: normal;
   }
 
   &__options tbody{
@@ -50,7 +56,6 @@
     padding-top: 10px;
     padding-bottom: 10px;
     box-shadow: inset 0px -1px 0px 0px rgba(236,236,236,1);
-    line-height: 24px;
   }
 
   &__options-key {
@@ -62,18 +67,19 @@
   }
 
   &__img-wrapper {
+    width: 260px;
+    display: block;
+    margin: 0 auto;
     margin-top: 30px;
   }
 
-  &__img-wrapper picture{
-    display: block;
-  }
+  // &__img-wrapper picture{
+  //   display: inline-block;
+  //   margin: 0 auto;
+  // }
 
   &__img-wrapper picture img{
-    display: block;
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
+    display: inline-block;
   }
 
   &__price {
@@ -83,6 +89,7 @@
     font-size: 17px;
     line-height: 24px;
     font-weight: bold;
+    color: #444444;
   }
 }
 
@@ -92,7 +99,7 @@
     padding-right: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
-    max-width: 1200px;
+    max-width: 1050px;
     margin: 0 auto;
   }
 
@@ -111,6 +118,7 @@
       margin-left: auto;
       text-align: center;
       align-self: center;
+      line-height: 17px;
     }
 
     &__stiсker br {
@@ -130,7 +138,12 @@
     }
 
     &__img-wrapper {
-      width: 50%;
+      // width: 50%;
+      // width: 340px;
+      width: auto;
+      // margin: auto;
+      margin-right: 0;
+      // margin-left: auto;
     }
 
     &__img-wrapper picture img{
@@ -141,10 +154,11 @@
       box-sizing: border-box;
       width: 50%;
       padding-right: 40px;
-      margin-top: -130px;
+      margin-top: -140px;
     }
 
     &__price {
+      margin-bottom: 35px;
       font-size: 20px;
       line-height: 24px;
     }
@@ -152,6 +166,11 @@
 }
 
 @media (min-width: $desktop-width) {
+  .top-products {
+    padding-top: 70px;
+    padding-bottom: 75px;
+  }
+
   .product {
     min-height: 635px;
     position: relative;
@@ -161,6 +180,7 @@
     // margin-left: 175px;
 
     &__title {
+      margin-top: 60px;
       font-size: 53px;
       line-height: 57px;
       z-index: 3;
@@ -168,12 +188,12 @@
 
     &__stiсker {
       position: absolute;
-      left: 50px;
-      top: 15px;
+      left: 0;
+      top: 75px;
       margin: 0;
       width: 175px;
       align-self: auto;
-      text-align: left;
+      text-align: center;
       // order: -1;
     }
 
@@ -185,6 +205,11 @@
       // margin-right: 10%;
       // flex-direction: column;
       // flex-grow: 1;
+    }
+
+    &__description {
+      margin-top: 50px;
+      margin-bottom: 55px;
     }
 
     &__img-wrapper {
