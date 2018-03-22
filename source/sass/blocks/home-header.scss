@@ -1,32 +1,117 @@
 .home-header {
-  height: 490px;
+  width: auto;
+  // margin-top: -80px;
   color: #000000;
   background-color: $bg_lightgrey;
   background-image: url("../img/hero-mobile@1x.jpg");
   background-repeat: no-repeat;
-  background-position: center 0;
-  background-size: cover;
+  background-position: center -30px;
 
   box-shadow: inset 0px 1px 0px 0px rgba(236,236,236,1);
 
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 490px;
+  }
+
   &__title {
-    text-align: center;
+    width: 100%;
     margin: 0;
+    margin-top: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    font-size: 27px;
+    line-height: 30px;
+    font-weight: bold;
   }
 
   &__menu {
+    width: 100%;
     padding: 0;
     margin: 0;
+    margin-top: auto;
     list-style: none;
+    // height: 210px;
+  }
+
+  &__item--left {
+    background-color: #63d1bb;
+  }
+
+  &__item--right {
+    background-color: #56c3b2;
+  }
+
+  &__link {
+    width: auto;
+    padding: 30px;
+    color: #fff;
+    display: block;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: bold;
+
+    &:active .home-header__text{
+      color: rgba(255,255,255,0.3);
+    }
+  }
+  &__text {
+    position: relative;
+    display: block;
+  }
+
+  &__text svg{
+    opacity: 0.2;
+    position: absolute;
+    top: -5px;
+    right: 0;
   }
 }
 
 @media (min-width: $tablet-width) {
   .home-header {
-    height: 745px;
+    // background-size: cover;
+    background-position: center 0;
+    background-size: cover;
 
+    &__wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 745px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    &__title {
+      margin-top: 160px;
+      font-size: 43px;
+      line-height: 50px;
+    }
     &__menu {
       display: flex;
+    }
+
+    &__item {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .home-header {
+    // background-size: cover;
+    // background-position: center center;
+
+    &__wrapper {
+
+    }
+
+    &__title {
+      font-size: 53px;
+      line-height: 57px;
     }
   }
 }
