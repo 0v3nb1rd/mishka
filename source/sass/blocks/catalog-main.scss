@@ -1,9 +1,34 @@
 .catalog-main {
 
   &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    padding-top: 70px;
+    padding-bottom: 65px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
+}
 
+@media (min-width: $tablet-width) {
+  .catalog-main {
+
+    &__wrapper {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .catalog-main {
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 125px;
+
+    }
+  }
 }
