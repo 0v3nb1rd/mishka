@@ -74,8 +74,14 @@
   }
 
   &__ico {
+    opacity: 0.2;
     display: block;
     height: 24px;
+
+    &:hover {
+      opacity: 1;
+      fill: #63d1bb;
+    }
   }
 }
 

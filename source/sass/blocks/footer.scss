@@ -39,7 +39,7 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    &:hover .social__link-ico path {
+    &:hover .social__link-ico {
       fill: #46c1ae;
     }
     &:active .social__link-ico {
@@ -62,8 +62,8 @@
     padding-top: 25px;
     padding-bottom: 25px;
 
-    &:hover .copyright__ico path {
-      fill: #000;
+    &:hover .copyright__ico {
+      fill: #46c1ae;
     }
 
     &:active {
@@ -99,7 +99,7 @@
       padding-top: 50px;
       padding-bottom: 50px;
 
-      &:hover .footer__logo-ico path{
+      &:hover .footer__logo-ico {
         fill: #46c1ae;
       }
 

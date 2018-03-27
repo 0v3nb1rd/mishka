@@ -45,6 +45,10 @@
     list-style: none;
   }
 
+  &__item-ico {
+    fill: #63d1bb;
+  }
+
   &__item-text {
     font-size: 17px;
     line-height: 20px;
@@ -72,6 +76,11 @@
       background-image: url("../img/review@1x.jpg");
       background-repeat: no-repeat;
       background-position: left 90%;
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/review@2x.jpg");
+        background-size: 350px auto;
+      }
     }
 
     &__title {
