@@ -4,10 +4,15 @@
     <meta charset="utf-8">
     <title>Мишка - каталог</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/style-min.css">
   </head>
   <body>
+    <div style="display:none">
+      <include src="build/img/sprite.svg"></include>
+    </div>
+
     <nav class="top-menu">
       <div class="container top-menu__wrapper top-menu--closed top-menu--nojs">
         <a class="logo" href="index.html">
@@ -37,8 +42,9 @@
           <li class="user-block__item">
             <a class="user-block__link user-block__link--search" href="#">
               <div class="user-block__inner user-block__inner--search">
-                <svg class="user-block__ico user-block__search-ico" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.6px" height="17.6px" viewBox="-0.8 -0.8 17.6 17.6" enable-background="new -0.8 -0.8 17.6 17.6" xml:space="preserve">
-                  <path fill="#231F20" d="M16.47,14.93l-3.415-3.415C14.02,10.226,14.6,8.634,14.6,6.899c0-4.253-3.447-7.699-7.7-7.699 S-0.8,2.646-0.8,6.899s3.446,7.7,7.699,7.7c1.734,0,3.326-0.58,4.613-1.546l3.417,3.416c0.203,0.202,0.418,0.33,0.771,0.33 c0.607,0,1.1-0.492,1.1-1.1C16.8,15.459,16.739,15.2,16.47,14.93z M1.399,6.899c0-3.038,2.462-5.5,5.5-5.5s5.5,2.462,5.5,5.5 s-2.462,5.5-5.5,5.5S1.399,9.938,1.399,6.899z"/>
+
+                <svg class="user-block__ico user-block__search-ico" width="17.6px" height="17.6px">
+                  <use xlink:href="#icon-search"></use>
                 </svg>
                 <span class="user-block__txt user-block__search-txt">Поиск по сайту</span>
               </div>
@@ -47,8 +53,9 @@
           <li class="user-block__item">
             <a class="user-block__link user-block__link--basket" href="#">
               <div class="user-block__inner user-block__inner--basket">
-                <svg class="user-block__ico user-block__basket-ico" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20.294px" height="18.849px" viewBox="264.205 370.961 20.294 18.849" enable-background="new 264.205 370.961 20.294 18.849" xml:space="preserve">
-                  <path fill="#231F20" d="M283.75,378.19h-3.151l-3.407-6.814c-0.185-0.37-0.634-0.52-1.006-0.335 c-0.371,0.186-0.521,0.636-0.335,1.006l3.071,6.143h-9.138l3.072-6.143c0.185-0.371,0.035-0.821-0.335-1.006 c-0.37-0.185-0.821-0.035-1.006,0.335l-3.407,6.814h-3.151c-0.414,0-0.75,0.336-0.75,0.75s0.336,0.75,0.75,0.75h0.157l0.855,2.991 c-0.187,0.137-0.316,0.347-0.316,0.595c0,0.396,0.309,0.71,0.697,0.739l1.656,5.795h12.697l1.656-5.795 c0.388-0.028,0.698-0.344,0.698-0.739c0-0.249-0.129-0.459-0.316-0.596l0.854-2.991h0.157c0.414,0,0.75-0.336,0.75-0.75 S284.164,378.19,283.75,378.19z M279.569,388.311h-10.433l-1.224-4.284h12.881L279.569,388.311z M281.222,382.526h-13.739 l-0.81-2.836h15.359L281.222,382.526z"/>
+
+                <svg class="user-block__ico user-block__basket-ico" width="20.294px" height="18.849px">
+                  <use xlink:href="#icon-cart"></use>
                 </svg>
                 <span class="user-block__txt user-block__basket-txt">Корзина: <span>пока пустa</span></span>
               </div>
@@ -70,6 +77,16 @@
         <article class="product-post">
           <a class="product-post__img-link" href="#">
             <picture>
+              <source type="image/webp" media="(min-width: 1200px)"
+                      srcset="img/webp/photo-hare-desktop@1x.webp 1x,
+                              img/webp/photo-hare-desktop@2x.webp 2x">
+
+              <source type="image/webp" media="(min-width: 768px)"
+                      srcset="img/webp/photo-hare-tablet@1x.webp 1x,
+                              img/webp/photo-hare-tablet@2x.webp 2x">
+
+              <source type="image/webp" srcset="img/webp/photo-hare-mobile@1x.webp 1x, img/webp/photo-hare-mobile@2x.webp 2x">
+
               <source media="(min-width: 1200px)"
                       srcset="img/photo-hare-desktop@1x.jpg 1x,
                               img/photo-hare-desktop@2x.jpg 2x">
@@ -89,7 +106,7 @@
             <a class="product-post__price" href="#">1 200 руб.</a>
             <a class="product-post__link-basket" href="#">
               <svg class="product-post__ico" width="20.294px" height="18.849px">
-                <use xlink:href="img/sprite.svg#bascet-icon"></use>
+                <use xlink:href="#icon-cart"></use>
               </svg>
             </a>
           </div>
@@ -98,6 +115,19 @@
         <article class="product-post">
           <a class="product-post__img-link" href="#">
             <picture>
+
+              <source type="image/webp" media="(min-width: 1200px)"
+                      srcset="img/webp/photo-bowl-desktop@1x.webp 1x,
+                              img/webp/photo-bowl-desktop@2x.webp 2x">
+
+              <source type="image/webp" media="(min-width: 768px)"
+                      srcset="img/webp/photo-bowl-tablet@1x.webp 1x,
+                              img/webp/photo-bowl-tablet@2x.webp 2x">
+
+              <source type="image/webp"
+                      srcset="img/webp/photo-bowl-mobile@1x.webp 1x,
+                              img/webp/photo-bowl-mobile@2x.webp 2x">
+
               <source media="(min-width: 1200px)"
                       srcset="img/photo-bowl-desktop@1x.jpg 1x,
                               img/photo-bowl-desktop@2x.jpg 2x">
@@ -117,7 +147,7 @@
             <a class="product-post__price" href="#">690 руб.</a>
             <a class="product-post__link-basket" href="#">
               <svg class="product-post__ico" width="20.294px" height="18.849px">
-                <use xlink:href="img/sprite.svg#bascet-icon"></use>
+                <use xlink:href="#icon-cart"></use>
               </svg>
             </a>
           </div>
@@ -126,6 +156,19 @@
         <article class="product-post">
           <a class="product-post__img-link" href="#">
             <picture>
+
+              <source type="image/webp" media="(min-width: 1200px)"
+                      srcset="img/webp/photo-toys-desktop@1x.webp 1x,
+                              img/webp/photo-toys-desktop@2x.webp 2x">
+
+              <source type="image/webp" media="(min-width: 768px)"
+                      srcset="img/webp/photo-toys-tablet@1x.webp 1x,
+                              img/webp/photo-toys-tablet@2x.webp 2x">
+
+              <source type="image/webp"
+                      srcset="img/webp/photo-toys-mobile@1x.webp 1x,
+                              img/webp/photo-toys-mobile@2x.webp 2x">
+
               <source media="(min-width: 1200px)"
                       srcset="img/photo-toys-desktop@1x.jpg 1x,
                               img/photo-toys-desktop@2x.jpg 2x">
@@ -145,7 +188,7 @@
             <a class="product-post__price" href="#">1 500 руб.</a>
             <a class="product-post__link-basket" href="#">
               <svg class="product-post__ico" width="20.294px" height="18.849px">
-                <use xlink:href="img/sprite.svg#bascet-icon"></use>
+                <use xlink:href="#icon-cart"></use>
               </svg>
             </a>
           </div>
@@ -154,12 +197,25 @@
         <article class="video-post">
           <h2 class="video-post__title">
             <svg class="video-post__title-ico" width="32px" height="32px">
-              <use xlink:href="img/sprite.svg#ico-video"></use>
+              <use xlink:href="#icon-video"></use>
             </svg>
             <span class="video-post__title-txt">Процесс производства</span>
           </h2>
           <div class="video-post__player-icon">
             <picture>
+
+              <source type="image/webp" media="(min-width: 1200px)"
+                      srcset="img/webp/video-desktop@1x.webp 1x,
+                              img/webp/video-desktop@2x.webp 2x">
+
+              <source type="image/webp" media="(min-width: 768px)"
+                      srcset="img/webp/video-tablet@1x.webp 1x,
+                              img/webp/video-tablet@2x.webp 2x">
+
+              <source type="image/webp"
+                      srcset="img/webp/video-mobile@1x.webp 1x,
+                              img/webp/video-mobile@2x.webp 2x">
+
               <source media="(min-width: 1200px)"
                       srcset="img/video-desktop@1x.jpg 1x,
                               img/video-desktop@2x.jpg 2x">
@@ -181,7 +237,7 @@
       <div class="container footer__wrapper">
         <a class="footer__logo-link" href="#">
           <svg class="footer__logo-ico" width="101.615px" height="34.056px">
-            <use xlink:href="img/sprite.svg#ico-logo-footer"></use>
+            <use xlink:href="#icon-logo(footer)"></use>
           </svg>
         </a>
 
@@ -189,21 +245,21 @@
           <li class="social__item">
             <a class="social__link social__link--instagram" href="#">Мы Инстаграме
               <svg class="social__link-ico" width="21.769px" height="21.334px">
-                <use xlink:href="img/sprite.svg#ico-insta-footer"></use>
+                <use xlink:href="#icon-insta"></use>
               </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__link social__link--facebook" href="#">Мы Фейсбуке
               <svg class="social__link-ico" width="14.962px" height="27.718px">
-                <use xlink:href="img/sprite.svg#ico-fb-footer"></use>
+                <use xlink:href="#icon-fb"></use>
               </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__link social__link--tvitter" href="#">Мы Твиттире
             <svg class="social__link-ico" width="23.494px" height="20.168px">
-              <use xlink:href="img/sprite.svg#ico-tvit-footer"></use>
+              <use xlink:href="#icon-twitter"></use>
             </svg>
             </a>
           </li>
@@ -212,13 +268,13 @@
         <div class="footer__copyright copyright">
           <a class="copyright__link" href="#">
             <b class="copyright__text">Разработано</b>
-            <svg class="copyright__ico" = width="25" height="25">
-              <use xlink:href="img/sprite.svg#ico-made"></use>
+            <svg class="copyright__ico" width="25" height="25">
+              <use xlink:href="#icon-face_smile"></use>
             </svg>
           </a>
         </div>
       </div>
     </footer>
-    <script src="js/mobile-nav.js"></script>
+    <script src="js/main-min.js"></script>
   </body>
 </html>

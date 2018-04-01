@@ -55,6 +55,10 @@
 
 .copyright {
 
+  &__ico {
+    transition: transform 0.1s ease-out;
+  }
+
   &__link {
     display: block;
     color: #000;
@@ -63,7 +67,7 @@
     padding-bottom: 25px;
 
     &:hover .copyright__ico {
-      fill: #46c1ae;
+      transform: scale(1.5);
     }
 
     &:active {
