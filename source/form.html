@@ -4,19 +4,26 @@
     <meta charset="utf-8">
     <title>Мишка - форма заказа</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/opensansbold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <div style="display:none">
+      <include src="build/img/sprite.svg"></include>
+    </div>
+
     <nav class="top-menu">
-      <div class="container top-menu__wrapper">
-        <a class="logo" href="index.html">
-          <picture class="logo__options">
-            <img src="img/logo-mobile.svg" width="85.589px" height="35.034px" alt="">
+      <div class="container top-menu__wrapper top-menu--closed top-menu--nojs">
+        <a class="logo">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="img/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+            <img class="logo__img" src="img/logo-mobile.svg" width="85" height="35" alt="«Мишка»">
           </picture>
         </a>
-        <button class="top-menu__toggle" type="button">Открыть меню</button>
-        <ul class="top-menu__list top-menu__list--closed">
+        <button class="top-menu__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <ul class="top-menu__list">
           <li class="top-menu__item">
             <a class="top-menu__link" href="catalog.html">Каталог товаров</a>
           </li>
@@ -34,14 +41,24 @@
         <ul class="user-block user-block--closed">
           <li class="user-block__item">
             <a class="user-block__link user-block__link--search" href="#">
-              <!-- <svg></svg> -->
-              Поиск по сайту
+              <div class="user-block__inner user-block__inner--search">
+
+                <svg class="user-block__ico user-block__search-ico" width="17.6px" height="17.6px">
+                  <use xlink:href="#icon-search"></use>
+                </svg>
+                <span class="user-block__txt user-block__search-txt">Поиск по сайту</span>
+              </div>
             </a>
           </li>
           <li class="user-block__item">
             <a class="user-block__link user-block__link--basket" href="#">
-              <!-- <svg></svg> -->
-              Корзина: <span>пока пуста</span>
+              <div class="user-block__inner user-block__inner--basket">
+
+                <svg class="user-block__ico user-block__basket-ico" width="20.294px" height="18.849px">
+                  <use xlink:href="#icon-cart"></use>
+                </svg>
+                <span class="user-block__txt user-block__basket-txt">Корзина: <span>пока пустa</span></span>
+              </div>
             </a>
           </li>
         </ul>
@@ -56,17 +73,17 @@
     </header>
 
     <form class="form" action="">
-      <div class="container">
+      <div class="container form__wrapper">
         <p class="form__description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
         <div class="form__type form__type--radio">
           <h2 class="form__title">
             <span>Тип</span>
           </h2>
           <div class="form__input-wrapper">
-            <input class="form__radio-input" id="accessory" type="radio" name="type" checked>
+            <input class="form__radio-input visually-hidden" id="accessory" type="radio" name="type" checked>
             <label class="form__radio-label" for="accessory">Аксессуар для интерьера</label>
 
-            <input class="form__radio-input" id="toy" type="radio" name="type">
+            <input class="form__radio-input visually-hidden" id="toy" type="radio" name="type">
             <label class="form__radio-label" for="toy">Детская игрушка</label>
           </div>
         </div>
@@ -78,22 +95,22 @@
             <span>Цвет</span>
           </h2>
           <div class="form__input-wrapper">
-            <input class="form__checkbox-input" id="white" type="checkbox" name="white" checked>
+            <input class="form__checkbox-input visually-hidden" id="white" type="checkbox" name="white" checked>
             <label class="form__checkbox-label" for="white">Белый</label>
 
-            <input class="form__checkbox-input" id="grey" type="checkbox" name="grey" checked>
+            <input class="form__checkbox-input visually-hidden" id="grey" type="checkbox" name="grey" checked>
             <label class="form__checkbox-label" for="grey">Серый</label>
 
-            <input class="form__checkbox-input" id="tiffany" type="checkbox" name="tiffany">
+            <input class="form__checkbox-input visually-hidden" id="tiffany" type="checkbox" name="tiffany">
             <label class="form__checkbox-label" for="tiffany">«Тиффани»</label>
 
-            <input class="form__checkbox-input" id="black" type="checkbox" name="black">
+            <input class="form__checkbox-input visually-hidden" id="black" type="checkbox" name="black">
             <label class="form__checkbox-label" for="black">Черный</label>
 
-            <input class="form__checkbox-input" id="pink" type="checkbox" name="pink">
+            <input class="form__checkbox-input visually-hidden" id="pink" type="checkbox" name="pink">
             <label class="form__checkbox-label" for="pink">Розовый</label>
 
-            <input class="form__checkbox-input" id="orange" type="checkbox" name="orange">
+            <input class="form__checkbox-input visually-hidden" id="orange" type="checkbox" name="orange">
             <label class="form__checkbox-label" for="orange">Оранжевый</label>
           </div>
         </div>
@@ -165,7 +182,7 @@
       <div class="container footer__wrapper">
         <a class="footer__logo-link" href="#">
           <svg class="footer__logo-ico" width="101.615px" height="34.056px">
-            <use xlink:href="img/sprite.svg#ico-logo-footer"></use>
+            <use xlink:href="#icon-logo_footer"></use>
           </svg>
         </a>
 
@@ -173,21 +190,21 @@
           <li class="social__item">
             <a class="social__link social__link--instagram" href="#">Мы Инстаграме
               <svg class="social__link-ico" width="21.769px" height="21.334px">
-                <use xlink:href="img/sprite.svg#ico-insta-footer"></use>
+                <use xlink:href="#icon-insta"></use>
               </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__link social__link--facebook" href="#">Мы Фейсбуке
               <svg class="social__link-ico" width="14.962px" height="27.718px">
-                <use xlink:href="img/sprite.svg#ico-fb-footer"></use>
+                <use xlink:href="#icon-fb"></use>
               </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__link social__link--tvitter" href="#">Мы Твиттире
             <svg class="social__link-ico" width="23.494px" height="20.168px">
-              <use xlink:href="img/sprite.svg#ico-tvit-footer"></use>
+              <use xlink:href="#icon-twitter"></use>
             </svg>
             </a>
           </li>
@@ -197,11 +214,13 @@
           <a class="copyright__link" href="#">
             <b class="copyright__text">Разработано</b>
             <svg class="copyright__ico" width="25" height="25">
-              <use xlink:href="img/sprite.svg#ico-made"></use>
+              <use xlink:href="#icon-face_smile"></use>
             </svg>
           </a>
         </div>
       </div>
     </footer>
+
+    <script src="js/main-min.js"></script>
   </body>
 </html>
