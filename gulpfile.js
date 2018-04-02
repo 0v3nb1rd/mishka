@@ -54,14 +54,6 @@ gulp.task("html", function() {
   .pipe(gulp.dest("build"));
 });
 
-gulp.task("build", function(done) {
-  run(
-    "clear", "copy", "imgmin",
-    "style", "sprite", "html",
-    "minjs", "webp",
-    "valid", done);
-});
-
 //////////////////////////////////////////////////////////
 gulp.task("style", function() {
   gulp.src("source/sass/style.scss")
@@ -93,6 +85,17 @@ gulp.task("serve", function() {
   gulp.watch("source/*.html", ["html"]).on("change", server.reload);
 });
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+gulp.task("minjs", function() {
+  return gulp.src("build/js/*.js")
+  .pipe(uglify())
+  .pipe(rename(function (path) {
+    path.basename += "-min";
+    path.extname = ".js"
+  }))
+  .pipe(gulp.dest("build/js"))
+})
+
 gulp.task("imgmin", function() {
   return gulp.src("source/img/*.{jpg,png,svg}")
   .pipe(imagemin([
@@ -111,6 +114,13 @@ gulp.task("webp", function() {
   .pipe(gulp.dest("build/img/webp"));
 });
 
+gulp.task("build", function(done) {
+  run(
+    "clear", "copy", "imgmin",
+    "style", "sprite", "html",
+    "minjs", "webp", done);
+});
+
 gulp.task("minify", function() {
   return gulp.src("build/*.html")
   .pipe(htmlmin({collapseWhitespace: true}))
@@ -122,13 +132,3 @@ gulp.task("valid", function() {
   .pipe(htmlhint())
   .pipe(htmlhint.failAfterError());
 });
-
-gulp.task("minjs", function() {
-  return gulp.src("build/js/*.js")
-  .pipe(uglify())
-  .pipe(rename(function (path) {
-    path.basename += "-min";
-    path.extname = ".js"
-  }))
-  .pipe(gulp.dest("build/js"))
-})
