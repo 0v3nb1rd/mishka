@@ -41,7 +41,7 @@
     }
   }
 
-  &__title span {
+  &__title-element {
     position: relative;
     display: inline-block;
     background: #fff;
@@ -62,6 +62,7 @@
     font-size: 17px;
     line-height: 18px;
     font-weight: bold;
+    cursor: pointer;
 
     &::before {
       content: "";
@@ -105,6 +106,7 @@
     font-size: 17px;
     line-height: 18px;
     font-weight: bold;
+    cursor: pointer;
 
     &:last-child {
       margin: 0;
@@ -140,7 +142,7 @@
     margin-bottom: 30px;
   }
 
-  &__input--wrapper {
+  &__input-wrapper {
     position: relative;
   }
 
@@ -150,6 +152,7 @@
     padding-bottom: 15px;
     border: 0;
     box-shadow: inset 0 -2px 0 #000000;
+    outline: none;
 
     &::placeholder {
       color: rgba(68,68,68,0.3);
@@ -236,39 +239,196 @@
 @media (min-width: $tablet-width) {
   .form {
 
+    &__description {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      font-size: 17px;
+      line-height: 30px;
+    }
+
     &__type--radio {
-    display: flex;
-    }
-
-    &__wrapper {
       display: flex;
+      margin-bottom: 40px;
     }
 
-    &__type-checkbox {
-      background-color: $bg_footer;
+    &__title {
+      flex-basis: 25%;
+      margin-bottom: 0;
+
+      &::after {
+        display: none;
+      }
     }
 
-    &__phone {
-    background-color: $bg_footer;
-    }
-
-    &__email {
-      background-color: $bg_footer;
+    &__title-element {
+      background-color: inherit;
+      margin-top: 30px;
     }
 
     &__input-wrapper {
+      flex-basis: 75%;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       flex-wrap: wrap;
+    }
+
+    &__radio-label {
+      // margin-bottom: 15px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      width: 100%;
+      // flex-grow: 1;
+
+      &::before {
+        top: 50%;
+        transform: translatey(-50%);
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &__radio-input:checked + .form__radio-label::after,
+    &__radio-input:not(checked) + .form__radio-label:active::after {
+      top: 50%;
+      left: 25px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &__type--checkbox {
+      padding: 45px 0;
+      background-color: $bg_footer;
+      margin: 0;
+    }
+
+    &__checkbox-label {
+      margin: 0;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      flex-basis: 37.5%;
+
+      &::before {
+        top: 50%;
+        transform: translatey(-50%);
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &__checkbox-input:checked + .form__checkbox-label::after,
+    &__checkbox-input:not(checked) + .form__checkbox-label:active::after {
+      top: 22px;
+      left: 8px;
+      width: 34px;
+      height: 33px;
+      background-size: 40px;
+    }
+
+    &__wrapper {
+      max-width: 1050px;
+      padding: 0 50px;
+      margin: 0 auto;
+    }
+
+    &__wrapper--inner {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__type--name {
+      padding: 45px 0 50px;
+      margin: 0;
     }
 
     &__text {
       display: flex;
       width: 100%;
+      margin: 0;
+      // padding: 20px 0;
+      font-size: 19px;
+      line-height: 18px;
+      cursor: pointer;
     }
 
-    &__textarea-input {
+    &__input-label {
+      padding: 20px 0;
+      margin-right: 25px;
+    }
+
+    &__input {
+      background: inherit;
+      padding: 20px;
+      font-size: 19px;
+      line-height: 18px;
+
+      &::placeholder {
+        font-size: 19px;
+        line-height: 18px;
+      }
+    }
+
+    &__type--phone {
+    background-color: $bg_footer;
+    margin: 0;
+    padding-top: 45px;
+    }
+
+    &__type--mail {
+      background-color: $bg_footer;
+      margin: 0;
+      padding-top: 15px;
+      padding-bottom: 50px;
+    }
+
+    &__type--textarea {
+      padding-top: 50px;
+      padding-bottom: 45px;
+    }
+
+    &__btn-submit {
+      width: 230px;
+      margin: 0;
+      margin-top: 50px;
+    }
+
+    &__required-info {
+      order: 3;
+      padding-top: 18px;
+      margin: 0;
+      margin-top: 50px;
       margin-left: auto;
+      color: #444;
+      font-size: 17px;
+      line-height: 30px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .form {
+
+    &__description {
+      width: 700px;
+      margin-left: 175px;
+      margin-top: 100px;
+    }
+
+    &__title {
+      flex-basis: auto;
+      width: 175px;
+    }
+
+    &__checkbox-label {
+      flex-basis: 25%;
+    }
+
+    &__btn-submit {
+      margin-left: 175px;
+    }
+
+    &__required-info {
+      margin-right: 90px;
+      // flex-basis: 37%;
     }
   }
 }
