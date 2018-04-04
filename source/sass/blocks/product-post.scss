@@ -5,6 +5,14 @@
   margin-bottom: 30px;
   outline: 1px solid #ececec;
 
+  &:hover {
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+  }
+
+  &:active {
+    box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  }
+
   &__img-link picture {
     display: block;
     background: linear-gradient(left, rgba(255,255,255,1) 0%, rgba(209,209,209,1) 52%, rgba(255,255,255,1) 100%);
@@ -45,6 +53,15 @@
     line-height: 24px;
     color: #000;
     font-weight: bold;
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 
   &__buy {
