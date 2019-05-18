@@ -32,7 +32,8 @@
     "stylelint": "stylelint 'source/sass/**/*.scss' --syntax scss",
     "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
-    "start": "npm run build && gulp serve"
+		"start": "npm run build && gulp serve",
+		"deploy": "gh-pages -d build"
   },
   "browserslist": [
     "last 2 versions",
@@ -49,5 +50,9 @@
   ],
   "engines": {
     "node": "8.9"
+	},
+	"homepage": "http://0v3nb1rd.github.io/mishka",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
